@@ -451,6 +451,106 @@ main.wrap { padding-block: 4px 40px; }
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 
+/* =====================================================
+   RESPONSIVE MÓVIL · Registro de Horas
+   Pegar al final del archivo CSS
+   ===================================================== */
+
+/* ---------- Tablets pequeñas y móviles grandes (hasta 767px) ---------- */
+@media (max-width: 767.98px) {
+  .home-grid { grid-template-columns: minmax(0, 1fr); }
+  .set-grid { max-width: 100%; }
+  .table-scroll { -webkit-overflow-scrolling: touch; }
+}
+
+/* ---------- Móviles (hasta 575px) ---------- */
+@media (max-width: 575.98px) {
+
+  /* Evita el zoom automático de iOS al enfocar un campo */
+  input, select, textarea, .form-control, .form-select {
+    font-size: 16px !important;
+  }
+
+  /* Áreas táctiles de al menos 44px */
+  .btn { min-height: 44px; }
+  .btn-sm { min-height: 40px; padding-inline: 12px; }
+  .form-control, .form-select { min-height: 46px; }
+  .stepper button { width: 48px; height: 48px; }
+
+  /* Cabecera */
+  .head-row { padding-top: 16px; gap: 8px; }
+  .year-pill { align-items: flex-start; text-align: left; }
+  .tab-link { padding: 12px 13px; }
+
+  /* Tarjetas */
+  .panel .card-body { padding: 16px; }
+  .panel-title { font-size: 1.12rem; margin-bottom: 12px; }
+
+  /* Barra de mes */
+  .monthbar { gap: 6px; }
+  .mb-label { font-size: 1.25rem; flex: 1 1 100px; }
+  #goToday { flex: 1 1 100%; }
+
+  /* Anillo de progreso */
+  .progress-grid { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 16px; }
+  .ring-wrap { width: 160px; height: 160px; }
+  .ring-big { font-size: 1.8rem; }
+  .cat-row dd { font-size: 1.15rem; }
+
+  /* Formulario */
+  .dur-row { gap: 6px; }
+  .chips .btn { flex: 1 1 auto; }
+  .rep-big { font-size: 2.2rem; }
+  .timer-face { font-size: 2.2rem; }
+
+  /* Historial */
+  .entry { grid-template-columns: 62px minmax(0, 1fr) auto; gap: 10px; padding: 10px 12px; }
+  .e-dur { font-size: 1.25rem; }
+  .e-actions .btn { width: 44px; height: 44px; }
+
+  /* Año de servicio */
+  .tiles { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tile .v { font-size: 1.3rem; }
+  .plot { height: 180px; margin-left: 32px; }
+  .gl span { left: -32px; width: 26px; font-size: .68rem; }
+  .xl { margin-left: 32px; }
+  .xl span { font-size: .66rem; }
+  .goal span { font-size: .68rem; }
+  .table th, .table td { padding: .45rem .4rem; font-size: .85rem; }
+
+  /* Configuración */
+  .two { grid-template-columns: minmax(0, 1fr); }
+  .btn-row .btn { flex: 1 1 100%; }
+
+  /* Modal y avisos */
+  .modal-dialog { margin: 12px; }
+  .modal-footer .btn { flex: 1 1 0; }
+  .toasts { padding-inline: max(12px, env(safe-area-inset-left, 0px)); }
+  .app-toast { width: 100%; }
+}
+
+/* ---------- Móviles muy pequeños (hasta 359px) ---------- */
+@media (max-width: 359.98px) {
+  .type-switch { grid-template-columns: minmax(0, 1fr); }
+  .entry { grid-template-columns: minmax(0, 1fr) auto; }
+  .entry .e-dur { grid-column: 1 / -1; }
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  .ring-wrap { width: 144px; height: 144px; }
+}
+
+/* ---------- Móvil en horizontal (poca altura) ---------- */
+@media (max-height: 480px) and (orientation: landscape) {
+  .head-row { padding-top: 8px; }
+  .app-head h1 { font-size: 1.4rem; }
+  .ring-wrap { width: 130px; height: 130px; }
+  .modal-dialog { margin: 8px auto; }
+}
+
+/* ---------- Dispositivos táctiles: sin efectos hover pegajosos ---------- */
+@media (hover: none) {
+  .btn-ghost:hover, .type-btn:hover, .stepper button:hover { background: transparent; }
+}
+
 </style>
 <header class="app-head">
   <div class="wrap">
